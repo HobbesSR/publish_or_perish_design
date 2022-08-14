@@ -1,0 +1,14 @@
+LINK = dinodata.csv
+UNIT = INCH
+PAGE = 8.5, 11, PORTRAIT
+
+cardsize = 2.5, 3.5
+FONT = "Arial", 24, ,#000000
+
+TEXT = 1-18, [dinoname], 0, 0, 100%, 15%
+
+TEXT = 1-18, [dinoterrain], 0, 25%, 100%, 15%
+TEXT = 1-18, [dinoprey], 0, 50%, 100%, 15%
+TEXT = 1-18, [value], 0, 80%, 100%, 15%
+
+DISPLAY = "tts_dinocards.png"
