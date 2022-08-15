@@ -1,4 +1,4 @@
-CARDS = [
+OLDCARDS = [
     {"habitat":[0,1,0,0,0,1,1,1], "dino":[0,1,0,1,0,2,0,0]}, # PHSL / PAHH
     {"habitat":[0,1,0,1,0,1,1,0], "dino":[1,0,2,0,0,0,0,0]}, # PAHS / BTT
     {"habitat":[0,1,0,0,0,1,0,1], "dino":[0,0,0,1,0,0,2,1]}, # PHL / ASSL
@@ -18,6 +18,28 @@ CARDS = [
     {"habitat":[0,1,0,0,0,1,0,1], "dino":[0,1,0,0,0,0,3,0]},
     {"habitat":[0,0,0,1,0,1,1,1], "dino":[1,1,0,0,0,0,0,2]}
 ]
+
+CARDS = [
+    {"habitat":[0,1,0,1,0,1,1,0], "dino":[0,0,1,0,0,1,1,0]}, 
+    {"habitat":[0,0,0,1,0,1,0,0], "dino":[0,1,1,0,0,0,0,0]}, 
+    {"habitat":[1,1,1,0,0,1,1,1], "dino":[0,1,0,0,1,0,1,0]}, 
+    {"habitat":[0,1,0,0,1,0,1,1], "dino":[1,1,1,0,0,0,1,0]}, 
+    {"habitat":[0,1,0,0,1,0,1,1], "dino":[0,0,0,0,1,1,1,0]},
+    {"habitat":[1,1,0,0,0,1,1,1], "dino":[0,0,0,0,1,0,1,1]},
+    {"habitat":[1,1,1,0,0,1,1,1], "dino":[1,0,1,0,0,0,1,1]},
+    {"habitat":[0,0,1,0,0,1,1,1], "dino":[0,1,0,0,1,1,1,0]},
+    {"habitat":[1,1,0,0,0,1,1,0], "dino":[0,0,0,0,1,1,1,0]},
+    {"habitat":[1,0,0,0,0,0,1,1], "dino":[0,1,0,1,0,1,1,0]},
+    {"habitat":[1,1,0,1,0,1,1,0], "dino":[0,1,0,1,0,1,1,0]},
+    {"habitat":[0,1,0,0,1,0,1,1], "dino":[1,0,0,1,0,0,1,0]},
+    {"habitat":[0,1,0,1,0,1,1,0], "dino":[0,1,1,0,1,0,1,1]},
+    {"habitat":[0,1,1,0,0,1,1,1], "dino":[0,0,1,0,1,0,1,0]},
+    {"habitat":[0,1,1,0,0,1,1,1], "dino":[1,0,1,0,0,0,1,1]},
+    {"habitat":[0,1,0,0,1,0,1,1], "dino":[1,1,1,0,0,0,1,0]},
+    {"habitat":[0,1,0,0,1,1,1,0], "dino":[0,0,1,1,0,0,1,0]},
+    {"habitat":[1,1,1,0,0,0,1,0], "dino":[0,1,0,1,0,1,1,0]}
+]
+
 
 def applyCardToRequirements(cardIndex, requirementsIn):
     card = CARDS[cardIndex]["habitat"]
@@ -102,7 +124,7 @@ resource_B = 0
 resource_P = 1
 resource_T = 2
 resource_A = 3
-resource_M = 4
+resource_C = 4
 resource_H = 5
 resource_S = 6
 resource_L = 7
@@ -111,9 +133,9 @@ resourceLetters = {
     resource_P:'P',
     resource_T:'T',
     resource_A:'A',
-    resource_M:'M',
-    resource_H:'H',
-    resource_S:'S',
+    resource_C:'C',
+    resource_H:'S',
+    resource_S:'M',
     resource_L:'L'
 }
 

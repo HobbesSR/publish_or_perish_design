@@ -3,8 +3,8 @@ UNIT = INCH
 PAGE = 8.5, 11, PORTRAIT
 
 cardsize = 2.5, 3.5
-FONT = "Arial", 24, ,#000000
-
+FONT = "Arial", 24,,#000000,#B4CFEC
+rectangle=,0,0,100%,100%,#B4CFEC
 TEXT = 1-18, [habitatname], 0, 0, 100%, 15%
 
 TEXT = 1-18, [habitatterrain], 0, 25%, 100%, 15%

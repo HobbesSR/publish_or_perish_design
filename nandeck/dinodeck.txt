@@ -3,8 +3,8 @@ UNIT = INCH
 PAGE = 8.5, 11, PORTRAIT
 
 cardsize = 2.5, 3.5
-FONT = "Arial", 24, ,#000000
-
+FONT = "Arial", 24, ,#000000,#F8B88B
+rectangle=,0,0,100%,100%,#F8B88B
 TEXT = 1-18, [dinoname], 0, 0, 100%, 15%
 
 TEXT = 1-18, [dinoterrain], 0, 25%, 100%, 15%
