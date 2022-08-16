@@ -6,18 +6,24 @@ cardsize = 2.5, 3.5
 rectangle=,0,0,100%,100%,#B4CFEC
 IMAGE=,"dinos(2)_0.png", 0, 0, 100%, 100%, 0
 LAYER=50%
-roundrect=,5%,2%,90%,11%,#000000
-roundrect=,5%,65%,90%,30%,#000000
+roundrect=,5%,2%,90%,11%, #12674a
+roundrect=,5%,65%,90%,30%,#12674a
+roundrect=,91%,94%,8%,5%,#000000
 ENDLAYER
+
+FONT = "Arial", 12,T,#FFFFFF
+TEXT = , INFO(C), 91%, 94%, 8%, 5%
 
 FONT = "Mesozoic", 20,T,#FFFFFF
 TEXT = , [habitatname], 0, 0, 100%, 15%, center, center, 0, 100, 0.02
 TEXT = , [habitatterrain], 0, 65%, 100%, 15%, center, center, 0, 100, 0.02
 TEXT = , [habitatprey], 0, 80%, 100%, 15%, center, center, 0, 100, 0.02
 
-FONT = "Mesozoic", 20,T,#000000
+FONT = "Mesozoic", 20,T, #12884a
 TEXT = , [habitatname], 0, 0, 100%, 15%
 TEXT = , [habitatterrain], 0, 65%, 100%, 15%
 TEXT = , [habitatprey], 0, 80%, 100%, 15%
+
+
 
 DISPLAY = "tts_habitatcards.png"
