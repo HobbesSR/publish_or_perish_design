@@ -3,7 +3,8 @@ UNIT = INCH
 PAGE = 8.5, 11, PORTRAIT
 
 cardsize = 2.5, 3.5
-FONT = "Arial", 24,,#000000,#B4CFEC
+FONT = "Arial", 24,T,#000000
+;IMAGE=,"dinos(2)_0.png", 0, 0, 100%, 100%, 0
 rectangle=,0,0,100%,100%,#B4CFEC
 TEXT = 1-18, [habitatname], 0, 0, 100%, 15%
 

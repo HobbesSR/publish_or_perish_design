@@ -1,43 +1,22 @@
-OLDCARDS = [
-    {"habitat":[0,1,0,0,0,1,1,1], "dino":[0,1,0,1,0,2,0,0]}, # PHSL / PAHH
-    {"habitat":[0,1,0,1,0,1,1,0], "dino":[1,0,2,0,0,0,0,0]}, # PAHS / BTT
-    {"habitat":[0,1,0,0,0,1,0,1], "dino":[0,0,0,1,0,0,2,1]}, # PHL / ASSL
-    {"habitat":[0,0,1,0,1,0,1,1], "dino":[3,0,0,0,0,0,0,0]}, # TM / 
-    {"habitat":[0,0,0,1,0,1,0,0], "dino":[1,2,0,0,0,0,1,1]},
-    {"habitat":[0,0,1,1,0,0,1,0], "dino":[0,0,1,0,2,0,0,0]},
-    {"habitat":[1,0,0,0,1,0,0,1], "dino":[0,0,2,1,0,0,0,0]},
-    {"habitat":[0,1,0,0,0,1,0,0], "dino":[0,0,0,2,0,1,1,0]},
-    {"habitat":[1,0,1,0,1,0,1,0], "dino":[1,2,0,0,0,0,0,0]},
-    {"habitat":[1,0,0,0,1,0,0,1], "dino":[0,0,3,0,0,0,0,0]},
-    {"habitat":[1,0,0,0,0,1,1,0], "dino":[0,1,0,0,0,2,1,0]},
-    {"habitat":[0,1,0,0,0,1,0,1], "dino":[1,0,0,0,1,0,2,0]},
-    {"habitat":[1,0,0,0,0,1,1,1], "dino":[0,2,0,0,0,1,0,1]},
-    {"habitat":[1,0,1,0,1,0,1,1], "dino":[0,3,0,0,0,0,0,0]},
-    {"habitat":[0,1,0,1,0,1,1,0], "dino":[2,0,1,0,0,0,0,0]},
-    {"habitat":[0,0,1,1,0,0,1,1], "dino":[2,0,0,0,1,0,0,0]},
-    {"habitat":[0,1,0,0,0,1,0,1], "dino":[0,1,0,0,0,0,3,0]},
-    {"habitat":[0,0,0,1,0,1,1,1], "dino":[1,1,0,0,0,0,0,2]}
-]
-
 CARDS = [
-    {"habitat":[0,1,0,1,0,1,1,0], "dino":[0,0,1,0,0,1,1,0]}, 
-    {"habitat":[0,0,0,1,0,1,0,0], "dino":[0,1,1,0,0,0,0,0]}, 
-    {"habitat":[1,1,1,0,0,1,1,1], "dino":[0,1,0,0,1,0,1,0]}, 
-    {"habitat":[0,1,0,0,1,0,1,1], "dino":[1,1,1,0,0,0,1,0]}, 
-    {"habitat":[0,1,0,0,1,0,1,1], "dino":[0,0,0,0,1,1,1,0]},
-    {"habitat":[1,1,0,0,0,1,1,1], "dino":[0,0,0,0,1,0,1,1]},
-    {"habitat":[1,1,1,0,0,1,1,1], "dino":[1,0,1,0,0,0,1,1]},
-    {"habitat":[0,0,1,0,0,1,1,1], "dino":[0,1,0,0,1,1,1,0]},
-    {"habitat":[1,1,0,0,0,1,1,0], "dino":[0,0,0,0,1,1,1,0]},
+    {"habitat":[0,1,0,1,0,1,1,0], "dino":[0,0,1,0,0,1,0,1]},
+    {"habitat":[0,0,0,1,0,1,1,0], "dino":[0,1,1,0,0,0,0,0]},
+    {"habitat":[1,0,1,0,0,1,0,1], "dino":[0,1,0,0,1,0,0,0]},
+    {"habitat":[0,1,0,0,1,0,0,1], "dino":[1,1,1,0,0,0,0,0]},
+    {"habitat":[0,1,0,0,1,0,0,1], "dino":[0,0,0,0,1,1,0,0]},
+    {"habitat":[1,1,0,0,0,1,1,1], "dino":[0,0,0,0,1,0,0,1]},
+    {"habitat":[1,1,1,0,0,1,0,1], "dino":[1,0,1,0,0,0,0,1]},
+    {"habitat":[0,0,1,0,0,1,0,1], "dino":[0,1,0,0,1,1,1,0]},
+    {"habitat":[1,1,0,0,0,1,0,0], "dino":[0,0,0,0,1,1,0,1]},
     {"habitat":[1,0,0,0,0,0,1,1], "dino":[0,1,0,1,0,1,1,0]},
-    {"habitat":[1,1,0,1,0,1,1,0], "dino":[0,1,0,1,0,1,1,0]},
-    {"habitat":[0,1,0,0,1,0,1,1], "dino":[1,0,0,1,0,0,1,0]},
-    {"habitat":[0,1,0,1,0,1,1,0], "dino":[0,1,1,0,1,0,1,1]},
-    {"habitat":[0,1,1,0,0,1,1,1], "dino":[0,0,1,0,1,0,1,0]},
-    {"habitat":[0,1,1,0,0,1,1,1], "dino":[1,0,1,0,0,0,1,1]},
-    {"habitat":[0,1,0,0,1,0,1,1], "dino":[1,1,1,0,0,0,1,0]},
-    {"habitat":[0,1,0,0,1,1,1,0], "dino":[0,0,1,1,0,0,1,0]},
-    {"habitat":[1,1,1,0,0,0,1,0], "dino":[0,1,0,1,0,1,1,0]}
+    {"habitat":[1,0,0,1,0,1,1,0], "dino":[0,1,0,1,0,1,0,0]},
+    {"habitat":[0,1,0,0,1,0,0,1], "dino":[1,0,0,1,0,0,1,1]},
+    {"habitat":[0,1,0,1,0,1,1,0], "dino":[0,1,1,0,1,0,0,0]},
+    {"habitat":[0,0,1,0,0,1,0,1], "dino":[0,0,1,0,1,0,0,0]},
+    {"habitat":[0,0,1,0,0,1,0,1], "dino":[1,0,1,0,0,0,1,1]},
+    {"habitat":[0,1,0,0,1,0,0,1], "dino":[1,1,1,0,0,0,0,0]},
+    {"habitat":[0,1,0,0,1,1,0,0], "dino":[0,0,1,1,0,0,0,0]},
+    {"habitat":[1,0,1,0,0,0,0,0], "dino":[0,1,0,1,0,1,0,0]}
 ]
 
 
@@ -60,7 +39,7 @@ def addressesRequirement(cardIndex, requirementsIn):
 
 def getCards(cardIndex, cardsAvailableIn, requirementsIn, solutions, currentSolutionIn):
     cardsAvailable = list(filter(lambda x: addressesRequirement(x, requirementsIn), cardsAvailableIn))
-    
+
     while len(cardsAvailable) > 0:
         requirements = list(requirementsIn)
         cardIndex = cardsAvailable.pop()
@@ -89,21 +68,20 @@ for card in cardIndexes:
     cardSolutions.append(solutions)
 
 totalSolutions = 0
-for i in range(len(cardSolutions)):    
+for i in range(len(cardSolutions)):
     card = cardSolutions[i]
-    solutionCount = len(card)    
+    solutionCount = len(card)
     totalSolutions = totalSolutions + solutionCount
 
 totalCardsAverages = []
 totalSolutionsRatios = []
 totalSolutionsRatiosByMax = []
-for i in range(len(cardSolutions)):    
+for i in range(len(cardSolutions)):
     card = cardSolutions[i]
     solutionCount = len(card)
-    totalCards = 0    
+    totalCards = 0
     for solution in card:
         totalCards = totalCards + len(solution)
-        #print(solution)                             
     print("For card : " + str(i) + " - " + str(totalCards / solutionCount) + " - " + str(solutionCount))
     totalCardsAverages.append(totalCards/solutionCount)
     print(solutionCount/totalSolutions)
@@ -112,30 +90,30 @@ for i in range(len(cardSolutions)):
 
 totalCardsAverage = 0
 for average in totalCardsAverages:
-    totalCardsAverage = totalCardsAverage + average 
+    totalCardsAverage = totalCardsAverage + average
 totalCardsAverage = totalCardsAverage / 18
 print(totalCardsAverages)
 print(totalSolutionsRatios)
 for i in range(len(totalCardsAverages)):
     solutionRatioScale = 1 + (totalSolutionsRatiosByMax[i]**2)
     print(round((totalCardsAverages[i] / totalCardsAverage) * totalCardsAverages[i] * solutionRatioScale))
-    
-resource_B = 0
-resource_P = 1
+
+resource_A = 0
+resource_B = 1
 resource_T = 2
-resource_A = 3
-resource_C = 4
-resource_H = 5
-resource_S = 6
+resource_C = 3
+resource_P = 4
+resource_S = 5
+resource_F = 6
 resource_L = 7
 resourceLetters = {
-    resource_B:'B',
-    resource_P:'P',
-    resource_T:'T',
     resource_A:'A',
+    resource_B:'B',
+    resource_T:'T',
     resource_C:'C',
-    resource_H:'S',
-    resource_S:'M',
+    resource_P:'P',
+    resource_S:'S',
+    resource_F:'F',
     resource_L:'L'
 }
 
@@ -163,5 +141,4 @@ for cardIndex in range(len(CARDS)):
     print(",", end = "")
     solutionRatioScale = 1 + (totalSolutionsRatiosByMax[i]**2)
     print(round((totalCardsAverages[cardIndex] / totalCardsAverage) * totalCardsAverages[cardIndex] * solutionRatioScale))
-    	   
-    
+
