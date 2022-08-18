@@ -1,23 +1,121 @@
 CARDS = [
-    {"habitat":[0,1,0,1,0,1,1,0], "dino":[0,0,1,0,0,1,0,1]},
-    {"habitat":[0,0,0,1,0,1,1,0], "dino":[0,1,1,0,0,0,0,0]},
-    {"habitat":[1,0,1,0,0,1,0,1], "dino":[0,1,0,0,1,0,0,0]},
-    {"habitat":[0,1,0,0,1,0,0,1], "dino":[1,1,1,0,0,0,0,0]},
-    {"habitat":[0,1,0,0,1,0,0,1], "dino":[0,0,0,0,1,1,0,0]},
-    {"habitat":[1,1,0,0,0,1,1,1], "dino":[0,0,0,0,1,0,0,1]},
-    {"habitat":[1,1,1,0,0,1,0,1], "dino":[1,0,1,0,0,0,0,1]},
-    {"habitat":[0,0,1,0,0,1,0,1], "dino":[0,1,0,0,1,1,1,0]},
-    {"habitat":[1,1,0,0,0,1,0,0], "dino":[0,0,0,0,1,1,0,1]},
-    {"habitat":[1,0,0,0,0,0,1,1], "dino":[0,1,0,1,0,1,1,0]},
-    {"habitat":[1,0,0,1,0,1,1,0], "dino":[0,1,0,1,0,1,0,0]},
-    {"habitat":[0,1,0,0,1,0,0,1], "dino":[1,0,0,1,0,0,1,1]},
-    {"habitat":[0,1,0,1,0,1,1,0], "dino":[0,1,1,0,1,0,0,0]},
-    {"habitat":[0,0,1,0,0,1,0,1], "dino":[0,0,1,0,1,0,0,0]},
-    {"habitat":[0,0,1,0,0,1,0,1], "dino":[1,0,1,0,0,0,1,1]},
-    {"habitat":[0,1,0,0,1,0,0,1], "dino":[1,1,1,0,0,0,0,0]},
-    {"habitat":[0,1,0,0,1,1,0,0], "dino":[0,0,1,1,0,0,0,0]},
-    {"habitat":[1,0,1,0,0,1,0,1], "dino":[0,1,0,1,0,1,0,0]}
+    {"habitat":[0,1,0,1,0,1,1,0]},
+    {"habitat":[0,0,0,1,0,1,1,0]},
+    {"habitat":[1,0,1,0,0,1,0,1]},
+    {"habitat":[0,1,0,0,1,0,0,1]},
+    {"habitat":[0,1,0,0,1,0,0,1]},
+    {"habitat":[1,1,0,0,0,1,1,1]},
+    {"habitat":[1,1,1,0,0,1,0,1]},
+    {"habitat":[0,0,1,0,0,1,0,1]},
+    {"habitat":[1,1,0,0,0,1,0,0]},
+    {"habitat":[1,0,0,0,0,0,1,1]},
+    {"habitat":[1,0,0,1,0,1,1,0]},
+    {"habitat":[0,1,0,0,1,0,0,1]},
+    {"habitat":[0,1,0,1,0,1,1,0]},
+    {"habitat":[0,0,1,0,0,1,0,1]},
+    {"habitat":[0,0,1,0,0,1,0,1]},
+    {"habitat":[0,1,0,0,1,0,0,1]},
+    {"habitat":[0,1,0,0,1,1,0,0]},
+    {"habitat":[1,0,1,0,0,1,0,1]}
 ]
+
+DINO_CARD_TRAIT_REQUIREMENTS = [
+    [0,0,1,0,0,2,0,1],
+    [0,2,1,0,0,0,0,0],
+    [0,2,0,0,1,0,0,0],
+    [2,1,1,0,0,0,0,0],
+    [0,0,0,0,1,2,0,0],
+    [0,0,0,0,1,0,0,2],
+    [1,0,1,0,0,0,0,2],
+    [0,1,0,0,1,1,1,0],
+    [0,0,0,0,1,1,0,1],
+    [0,1,0,2,0,1,1,0],
+    [0,1,0,1,0,2,0,0],
+    [1,0,0,1,0,0,1,1],
+    [0,1,1,0,1,0,0,0],
+    [0,0,1,0,1,0,0,0],
+    [1,0,1,0,0,0,1,1],
+    [1,2,1,0,0,0,0,0],
+    [0,0,1,1,0,0,0,0],
+    [0,2,0,1,0,1,0,0]
+]
+
+def cardsConflictCount(dinoCardIndex, habitatCardIndex):
+    dinoCardTraits = DINO_CARD_TRAIT_REQUIREMENTS[dinoCardIndex]
+    habitatCardTraits = CARDS[habitatCardIndex]["habitat"]
+    conflictCount = 0
+    for traitIndex in range (len(dinoCardTraits)):
+        if dinoCardTraits[traitIndex] > 0 and habitatCardTraits[traitIndex] > 0:
+            conflictCount = conflictCount + 1
+    return conflictCount
+
+dinoConflicts = [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+]
+
+DINO_NAMES = [
+    "Herrerasaurus",
+    "Plateosaurus",
+    "Stegosaurus",
+    "Corythosaurus",
+    "Gallimimus",
+    "Allosaurus",
+    "Tyrannosaurus",
+    "Oviraptor",
+    "Velociraptor",
+    "Archaeopteryx",
+    "Compsognathus",
+    "Baryonyx",
+    "Triceratops",
+    "Brachiosaurus",
+    "Ceratosaurus",
+    "Apatosaurus",
+    "Iguanodon",
+    "Thecodontosaurus"
+]
+
+# for each card, find the list of available cards that have no conflicts
+# find the cards with the fewest set of conflict free cards
+# from the cards among those, find the card with the most conflicts
+# assign to the first card that has no conflict with that card out of the cards with the fewest conflict free cards
+for habitatCardIndex in range(len(CARDS)):
+    print(habitatCardIndex, end = " - ")
+    for dinoCardIndex in range(len(DINO_CARD_TRAIT_REQUIREMENTS)):
+        if not cardsConflictCount(dinoCardIndex, habitatCardIndex):
+            print(dinoCardIndex, end = ",")
+        else:
+            dinoConflicts[dinoCardIndex] += 1
+    print("", end = "|")
+    for dinoCardIndex in range(len(DINO_CARD_TRAIT_REQUIREMENTS)):
+        if cardsConflictCount(dinoCardIndex, habitatCardIndex) == 1:
+            print(dinoCardIndex, end = ",")
+    print()
+
+for i in range(len(dinoConflicts)):
+    print("Conflicts for Dino " + str(i) + " - " + str(dinoConflicts[i]))
+
+HABITAT_DINO_INDEXES = [6,3,2,4,15,13,9,10,5,17,1,0,8,11,12,16,14,7]
+#[5,2,1,3,14,12,8,9,4,17,1,16,7,10,11,15,13,6]
+
+for cardIndex in range(len(CARDS)):
+    CARDS[cardIndex]["dino"] = DINO_CARD_TRAIT_REQUIREMENTS[HABITAT_DINO_INDEXES[cardIndex]]
 
 HABITAT_NAMES = [
     "Island",
@@ -121,7 +219,6 @@ cardIndexes = list(range(0,18))
 cardSolutions = []
 
 for card in cardIndexes:
-    print(card)
     solutions = []
     cardsAvailable = list(filter(lambda x: x != card, cardIndexes))
     currentSolution = []
@@ -130,35 +227,48 @@ for card in cardIndexes:
     cardSolutions.append(solutions)
 
 totalSolutions = 0
+cardSolutionsMinSolution = []
+cardSolutionsNumberSolution = []
 for i in range(len(cardSolutions)):
     card = cardSolutions[i]
     solutionCount = len(card)
+    cardSolutionsNumberSolution.append(solutionCount)
+    cardSolutionsMinSolution.append(len(min(card, key=len)))
     totalSolutions = totalSolutions + solutionCount
 
-totalCardsAverages = []
-totalSolutionsRatios = []
-totalSolutionsRatiosByMax = []
+maxNumberSolutions = max(cardSolutionsNumberSolution)
+
+totalCardsAverages = [] # average number of cards across all solutions for each card
+totalSolutionsRatios = [] # percentage of solutions each card uses out of all solutions for all cards
+totalSolutionsRatiosByMax = [] # The percentage relative to the max size set of solutions for each cards set of solutions
 for i in range(len(cardSolutions)):
     card = cardSolutions[i]
-    solutionCount = len(card)
+    solutionCount = cardSolutionsNumberSolution[i]
     totalCards = 0
     for solution in card:
         totalCards = totalCards + len(solution)
     print("For card : " + str(i) + " - " + str(totalCards / solutionCount) + " - " + str(solutionCount))
     totalCardsAverages.append(totalCards/solutionCount)
-    print(solutionCount/totalSolutions)
+    #print(solutionCount/totalSolutions)
+    print("    Min solution = " + str(cardSolutionsMinSolution[i]))
     totalSolutionsRatios.append(solutionCount/totalSolutions)
-    totalSolutionsRatiosByMax.append(1-solutionCount/527)
+    totalSolutionsRatiosByMax.append(solutionCount/maxNumberSolutions)
 
 totalCardsAverage = 0
 for average in totalCardsAverages:
     totalCardsAverage = totalCardsAverage + average
 totalCardsAverage = totalCardsAverage / 18
 print(totalCardsAverages)
-print(totalSolutionsRatios)
+#print(totalSolutionsRatios)
+
+bonusPercent = 50
+cardValues = []
 for i in range(len(totalCardsAverages)):
-    solutionRatioScale = 1 + (totalSolutionsRatiosByMax[i]**2)
-    print(round((totalCardsAverages[i] / totalCardsAverage) * totalCardsAverages[i] * solutionRatioScale))
+    solutionRatioScale = 1 + (bonusPercent * (1-totalSolutionsRatiosByMax[i])) / 100
+    relativeAverageScale = (totalCardsAverages[i] / totalCardsAverage)
+    cardValue = round(totalCardsAverages[i] * relativeAverageScale * solutionRatioScale)
+    cardValues.append(cardValue)
+    print(str(cardValue) + " - " + str(totalCardsAverages[i]))
 
 resource_A = 0
 resource_B = 1
@@ -201,10 +311,11 @@ for cardIndex in range(len(CARDS)):
     print(",", end = "")
 
     # dinosaur name
-    dino = card["dino"]
-    print("Dino" + str(cardIndex+1), end =",")
+    #print("Dino" + str(cardIndex+1), end =",")
+    print(DINO_NAMES[HABITAT_DINO_INDEXES[cardIndex]], end = ",")
 
     # dinosaur environment trait requirements
+    dino = card["dino"]
     for traitIndex in range(5):
     	for i in range(dino[traitIndex]):
     	   print(resourceLetters[traitIndex], end = "")
@@ -217,6 +328,5 @@ for cardIndex in range(len(CARDS)):
     print(",", end = "")
 
     # dinosaur point value
-    solutionRatioScale = 1 + (totalSolutionsRatiosByMax[i]**2)
-    print(round((totalCardsAverages[cardIndex] / totalCardsAverage) * totalCardsAverages[cardIndex] * solutionRatioScale))
+    print(cardValues[cardIndex])
 
