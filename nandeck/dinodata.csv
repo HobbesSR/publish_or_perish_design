@@ -1,19 +1,19 @@
 habitatname,habit_image_path,habitatterrain,habitatprey,dinoname,dinoterrain,dinoprey,value
-Island,island/dinos(4)_1.png,BC,SF,Tyrannosaurus,AT,LL,4
-Lagoon,lagoon/dinos(6)_7.png,C,SF,Corythosaurus,AABT,,5
-Swamp,swamp/dinos(7)_7.png,AT,SL,Stegosaurus,BBP,,2
-Floodplain,floodplain/dinos(8)_6.png,BP,L,Gallimimus,P,SS,4
-Prarie,prarie/dinos(9)_1.png,BP,L,Apatosaurus,ABBT,,5
-River,river/dinos(10)_4.png,AB,SFL,Brachiosaurus,TP,,2
-Riparian Forest,riparian_forest/dinos(2)_4.png,ABT,SL,Archaeopteryx,BCC,SF,7
-Coniferous Forest,coniferous_forest/dinos(11)_6.png,T,SL,Compsognathus,BC,SS,5
-Marsh,marshland/dinos(12)_3.png,AB,S,Allosaurus,P,LL,3
-Lake,lake/dinos(14)_9.png,A,FL,Thecodontosaurus,BBC,S,5
-Delta,delta/dinos(16)_6.png,AC,SF,Plateosaurus,BBT,,4
-Savanna,savanna/dinos(17)_7.png,BP,L,Herrerasaurus,T,SSL,4
-Coast,coast/dinos(18)_1.png,BC,SF,Velociraptor,P,SL,3
-Mixed Forest,mixed_forest/dinos(24)_6.png,T,SL,Baryonyx,AC,FL,4
-Deciduous Forest,deciduous_forest/dinos(25)_15.png,T,SL,Triceratops,BTP,,3
-Desert Plain,desert_plain/dinos(26)_2.png,BP,L,Iguanodon,TC,,2
-Scrubland,scrubland/dinos(27)_3.png,BP,S,Ceratosaurus,AT,FL,5
-Wetland,wetlands/dinos(28)_1.png,AT,SL,Oviraptor,BP,SF,4
+Island,island/dinos(4)_1.png,BC,SF,Tyrannosaurus,AT,LL,14
+Lagoon,lagoon/dinos(6)_7.png,C,SF,Corythosaurus,AABT,,13
+Swamp,swamp/dinos(7)_7.png,AT,SL,Stegosaurus,BBP,,15
+Floodplain,floodplain/dinos(8)_6.png,BP,L,Gallimimus,PP,SS,21
+Prarie,prarie/dinos(9)_1.png,BP,L,Apatosaurus,ABBT,,12
+River,river/dinos(10)_4.png,AB,SFL,Brachiosaurus,TP,,15
+Riparian Forest,riparian_forest/dinos(2)_4.png,ABT,SL,Archaeopteryx,BCC,SF,14
+Coniferous Forest,coniferous_forest/dinos(11)_6.png,T,SL,Compsognathus,BC,SS,13
+Marsh,marshland/dinos(12)_3.png,AB,S,Allosaurus,AP,LL,13
+Lake,lake/dinos(14)_9.png,A,FL,Thecodontosaurus,BBCC,SS,10
+Delta,delta/dinos(16)_6.png,AC,SF,Plateosaurus,BBT,,14
+Savanna,savanna/dinos(17)_7.png,BP,L,Herrerasaurus,T,SSL,14
+Coast,coast/dinos(18)_1.png,BC,SF,Velociraptor,P,SL,15
+Mixed Forest,mixed_forest/dinos(24)_6.png,T,SL,Baryonyx,AC,FFL,14
+Deciduous Forest,deciduous_forest/dinos(25)_15.png,T,SL,Triceratops,BTP,,15
+Desert Plain,desert_plain/dinos(26)_2.png,BP,L,Iguanodon,TTTC,,29
+Scrubland,scrubland/dinos(27)_3.png,BP,S,Ceratosaurus,AAAT,SFL,19
+Wetland,wetlands/dinos(28)_1.png,AT,SL,Oviraptor,BP,SF,14

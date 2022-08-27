@@ -19,25 +19,46 @@ CARDS = [
     {"habitat":[1,0,1,0,0,1,0,1]}
 ]
 
+# DINO_CARD_TRAIT_REQUIREMENTS_OLD = [
+#     [0,0,1,0,0,2,0,1],
+#     [0,2,1,0,0,0,0,0],
+#     [0,2,0,0,1,0,0,0],
+#     [2,1,1,0,0,0,0,0],
+#     [0,0,0,0,1,2,0,0],
+#     [0,0,0,0,1,0,0,2],
+#     [1,0,1,0,0,0,0,2],
+#     [0,1,0,0,1,1,1,0],
+#     [0,0,0,0,1,1,0,1],
+#     [0,1,0,2,0,1,1,0],
+#     [0,1,0,1,0,2,0,0],
+#     [1,0,0,1,0,0,1,1],
+#     [0,1,1,0,1,0,0,0],
+#     [0,0,1,0,1,0,0,0],
+#     [1,0,1,0,0,0,1,1],
+#     [1,2,1,0,0,0,0,0],
+#     [0,0,1,1,0,0,0,0],
+#     [0,2,0,1,0,1,0,0]
+# ]
+
 DINO_CARD_TRAIT_REQUIREMENTS = [
     [0,0,1,0,0,2,0,1],
     [0,2,1,0,0,0,0,0],
     [0,2,0,0,1,0,0,0],
     [2,1,1,0,0,0,0,0],
-    [0,0,0,0,1,2,0,0],
-    [0,0,0,0,1,0,0,2],
+    [0,0,0,0,2,2,0,0],
+    [1,0,0,0,1,0,0,2],
     [1,0,1,0,0,0,0,2],
     [0,1,0,0,1,1,1,0],
     [0,0,0,0,1,1,0,1],
     [0,1,0,2,0,1,1,0],
     [0,1,0,1,0,2,0,0],
-    [1,0,0,1,0,0,1,1],
+    [1,0,0,1,0,0,2,1],
     [0,1,1,0,1,0,0,0],
     [0,0,1,0,1,0,0,0],
-    [1,0,1,0,0,0,1,1],
+    [3,0,1,0,0,1,1,1],
     [1,2,1,0,0,0,0,0],
-    [0,0,1,1,0,0,0,0],
-    [0,2,0,1,0,1,0,0]
+    [0,0,3,1,0,0,0,0],
+    [0,2,0,2,0,2,0,0]
 ]
 
 def cardsConflictCount(dinoCardIndex, habitatCardIndex):
@@ -49,26 +70,7 @@ def cardsConflictCount(dinoCardIndex, habitatCardIndex):
             conflictCount = conflictCount + 1
     return conflictCount
 
-dinoConflicts = [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-]
+dinoConflicts = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
 DINO_NAMES = [
     "Herrerasaurus",
@@ -199,7 +201,8 @@ def addressesRequirement(cardIndex, requirementsIn):
 
 def getCards(cardIndex, cardsAvailableIn, requirementsIn, solutions, currentSolutionIn):
     cardsAvailable = list(filter(lambda x: addressesRequirement(x, requirementsIn), cardsAvailableIn))
-
+    if len(currentSolutionIn) >= 5:
+        return
     while len(cardsAvailable) > 0:
         requirements = list(requirementsIn)
         cardIndex = cardsAvailable.pop()
@@ -216,16 +219,41 @@ def getCards(cardIndex, cardsAvailableIn, requirementsIn, solutions, currentSolu
 
 cardIndexes = list(range(0,18))
 
+import statistics
 cardSolutions = []
-
+cardSolutionUsageCounts = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+cardSolutionsMedianLength = []
 for card in cardIndexes:
     solutions = []
     cardsAvailable = list(filter(lambda x: x != card, cardIndexes))
     currentSolution = []
     requirements = CARDS[card]["dino"]
     getCards(card, cardsAvailable, requirements, solutions, currentSolution)
+    #print(solutions)
     cardSolutions.append(solutions)
+    for solution in solutions:
+        for solutionCard in solution:
+            cardSolutionUsageCounts[solutionCard] += 1
+    solutionLengths = [len(solution) for solution in solutions]
+    cardSolutionsMedianLength.append(statistics.median(solutionLengths))
 
+cardSolutionMeanUsage = statistics.mean(cardSolutionUsageCounts)
+
+habitCardRelativeDemand = [usageCount / cardSolutionMeanUsage for usageCount in cardSolutionUsageCounts]
+
+dinoAverageSolutionValues = []
+#print(habitCardRelativeDemand)
+for card in cardIndexes:
+    solutionValuesTotal = 0
+    for solution in cardSolutions[card]:
+        for habitCardIndex in solution:
+            solutionValuesTotal += habitCardRelativeDemand[habitatCardIndex]
+    dinoAverageSolutionValues.append(solutionValuesTotal / len(cardSolutions[card]))
+
+dinoAverageSolutionValueAverage = statistics.mean(dinoAverageSolutionValues)
+dinoCardRelativeAverageSolutionValue = [averageSolutionValue / dinoAverageSolutionValueAverage for averageSolutionValue in dinoAverageSolutionValues]
+
+print(dinoCardRelativeAverageSolutionValue)
 totalSolutions = 0
 cardSolutionsMinSolution = []
 cardSolutionsNumberSolution = []
@@ -251,6 +279,9 @@ for i in range(len(cardSolutions)):
     totalCardsAverages.append(totalCards/solutionCount)
     #print(solutionCount/totalSolutions)
     print("    Min solution = " + str(cardSolutionsMinSolution[i]))
+    print("    Median solution length = " + str(cardSolutionsMedianLength[i]))
+    print("    Dino solution average value = " + str(dinoAverageSolutionValues[i]))
+    print("    Solution use = " + str(cardSolutionUsageCounts[i]))
     totalSolutionsRatios.append(solutionCount/totalSolutions)
     totalSolutionsRatiosByMax.append(solutionCount/maxNumberSolutions)
 
@@ -266,7 +297,8 @@ cardValues = []
 for i in range(len(totalCardsAverages)):
     solutionRatioScale = 1 + (bonusPercent * (1-totalSolutionsRatiosByMax[i])) / 100
     relativeAverageScale = (totalCardsAverages[i] / totalCardsAverage)
-    cardValue = round(totalCardsAverages[i] * relativeAverageScale * solutionRatioScale)
+    #cardValue = round(totalCardsAverages[i] * relativeAverageScale * solutionRatioScale)
+    cardValue = round(cardSolutionsMinSolution[i] * relativeAverageScale * solutionRatioScale * (1/dinoCardRelativeAverageSolutionValue[i]) * 5)
     cardValues.append(cardValue)
     print(str(cardValue) + " - " + str(totalCardsAverages[i]))
 

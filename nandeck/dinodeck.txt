@@ -15,7 +15,7 @@ FONT = "Arial", 12,T,#FFFFFF
 TEXT = , INFO(C), 91%, 94%, 8%, 5%
 
 LAYER=25%
-roundrect=,15%,72%,15%,15%,#FEFEFE
+roundrect=,13%,72%,18%,15%,#FEFEFE
 ENDLAYER
 
 FONT = "Mesozoic", 20,TF,#FFFFFF
@@ -23,14 +23,14 @@ TEXT = , [dinoname], 10%, 0, 80%, 15%, center, center, 0, 100, 0.02
 FONT = "Mesozoic", 26,T,#FFFFFF
 TEXT = , [dinoterrain], 30%, 65%, 65%, 15%, center, center, 0, 100, 0.02
 TEXT = , [dinoprey], 30%, 80%, 65%, 15%, center, center, 0, 100, 0.02
-TEXT = , [value], 15%, 72%, 15%, 15%, center, center, 0, 100, 0.02
+TEXT = , [value], 13%, 72%, 18%, 15%, center, center, 0, 100, 0.02
 
 FONT = "Mesozoic", 20,TF,#000000
 TEXT = , [dinoname], 10%, 0, 80%, 15%
 FONT = "Mesozoic", 26,T,#000000
 TEXT = , [dinoterrain], 30%, 65%, 65%, 15%
 TEXT = , [dinoprey], 30%, 80%, 65%, 15%
-TEXT = , [value], 15%, 72%, 15%, 15%
+TEXT = , [value], 13%, 72%, 18%, 15%
 
 DISPLAY = "tts_dinocards.png"
 DISPLAY = "tts_dinocards1.png",1,9,1-9
