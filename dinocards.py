@@ -223,6 +223,7 @@ import statistics
 cardSolutions = []
 cardSolutionUsageCounts = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 cardSolutionsMedianLength = []
+cardSolutionsLengthCounts = []
 for card in cardIndexes:
     solutions = []
     cardsAvailable = list(filter(lambda x: x != card, cardIndexes))
@@ -235,6 +236,8 @@ for card in cardIndexes:
         for solutionCard in solution:
             cardSolutionUsageCounts[solutionCard] += 1
     solutionLengths = [len(solution) for solution in solutions]
+    solutionLengthsCounts = [solutionLengths.count(length) for length in range(2,6)]
+    cardSolutionsLengthCounts.append(solutionLengthsCounts)
     cardSolutionsMedianLength.append(statistics.median(solutionLengths))
 
 cardSolutionMeanUsage = statistics.mean(cardSolutionUsageCounts)
@@ -260,7 +263,7 @@ cardSolutionsNumberSolution = []
 for i in range(len(cardSolutions)):
     card = cardSolutions[i]
     solutionCount = len(card)
-    cardSolutionsNumberSolution.append(solutionCount)
+    cardSolutionsNumberSolution.append(solutionCount / cardSolutionsMedianLength[i])
     cardSolutionsMinSolution.append(len(min(card, key=len)))
     totalSolutions = totalSolutions + solutionCount
 
@@ -292,13 +295,16 @@ totalCardsAverage = totalCardsAverage / 18
 print(totalCardsAverages)
 #print(totalSolutionsRatios)
 
-bonusPercent = 50
+bonusPercent = 30
 cardValues = []
 for i in range(len(totalCardsAverages)):
     solutionRatioScale = 1 + (bonusPercent * (1-totalSolutionsRatiosByMax[i])) / 100
     relativeAverageScale = (totalCardsAverages[i] / totalCardsAverage)
     #cardValue = round(totalCardsAverages[i] * relativeAverageScale * solutionRatioScale)
-    cardValue = round(cardSolutionsMinSolution[i] * relativeAverageScale * solutionRatioScale * (1/dinoCardRelativeAverageSolutionValue[i]) * 5)
+    #cardValue = round(cardSolutionsMinSolution[i] * solutionRatioScale * (1/dinoCardRelativeAverageSolutionValue[i]) * 5)
+    amalgamatedExpectedCards = (cardSolutionsMinSolution[i] * 0.5 + cardSolutionsMedianLength[i] * 0.25 + totalCardsAverages[i] * 0.25)
+    cardValue = round(amalgamatedExpectedCards * solutionRatioScale * (1/dinoCardRelativeAverageSolutionValue[i]) * 5)
+
     cardValues.append(cardValue)
     print(str(cardValue) + " - " + str(totalCardsAverages[i]))
 
@@ -321,6 +327,8 @@ resourceLetters = {
     resource_L:'L'
 }
 
+
+manualCardValues = [12,14,10,18,14,12,16,10,11,17,14,12,10,12,13,23,19,11]
 for cardIndex in range(len(CARDS)):
     card = CARDS[cardIndex]
     habitat = card["habitat"]
@@ -360,5 +368,27 @@ for cardIndex in range(len(CARDS)):
     print(",", end = "")
 
     # dinosaur point value
-    print(cardValues[cardIndex])
+    print(manualCardValues[cardIndex])
 
+print("-------------------")
+
+print("card Solution Usage Counts,habit Card Relative Demand,card Solutions Number Solution,card Solutions Min Solution,card Solutions Median Length,dino Average Solution Values,total Solutions Ratios,total Solutions Ratios By Max,total Cards Averages,dino Card Relative Average Solution Value,solution Ratio Scale,relative Average Scale,solutions 2,solutions 3,solutions 4,solutions 5,card Values")
+for cardIndex in range(len(CARDS)):
+    if False:
+        print(round(cardSolutionUsageCounts[cardIndex],2), end =",")
+        print(round(habitCardRelativeDemand[cardIndex],2), end =",")
+        print(round(cardSolutionsNumberSolution[cardIndex],2), end =",")
+        print(round(cardSolutionsMinSolution[cardIndex],2), end =",")
+        print(round(cardSolutionsMedianLength[cardIndex],2), end =",")
+        print(round(dinoAverageSolutionValues[cardIndex],2), end =",")
+        print(round(totalSolutionsRatios[cardIndex],2), end =",")
+        print(round(totalSolutionsRatiosByMax[cardIndex],2), end =",")
+        print(round(totalCardsAverages[cardIndex],2), end =",")
+        print(round(dinoCardRelativeAverageSolutionValue[cardIndex],2), end =",")
+        print(round(1 + (bonusPercent * (1-totalSolutionsRatiosByMax[cardIndex])) / 100,2), end =",")
+        print(round((totalCardsAverages[cardIndex] / totalCardsAverage),2), end =",")
+        for lengthCount in cardSolutionsLengthCounts[cardIndex]:
+            print(lengthCount, end = ",")
+        # dinosaur point value
+        print(manualCardValues[cardIndex]) #, end =",")
+        #print(cardValues[cardIndex] - 10)

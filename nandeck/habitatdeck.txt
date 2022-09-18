@@ -46,5 +46,5 @@ ICONS = , [habitatprey], 0, 80%, 100%, 15%,13%,13%,0,NP
 
 PRINT=1-9,10-18
 DISPLAY = "tts_habitatcards.png"
-;DISPLAY = "tts_habitatcards1.png",1,9,1-9
-;DISPLAY = "tts_habitatcards2.png",10,18,10-18
+DISPLAY = "tts_habitatcards1.png",1,9,1-9
+DISPLAY = "tts_habitatcards2.png",10,18,10-18
