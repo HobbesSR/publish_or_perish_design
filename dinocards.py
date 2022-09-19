@@ -327,6 +327,48 @@ resourceLetters = {
     resource_L:'L'
 }
 
+HABITAT_POWERS = [
+    "",
+    "",
+    "",
+    "Discard: Refersh Draft Row. Then Take Draft Action.",
+    "Discard: Refersh Draft Row. Then Take Draft Action.",
+    "",
+    "",
+    "Discard: Take a card from the discard pile and add to your hand",
+    "",
+    "",
+    "",
+    "When Drafted: May take top dinosaur card on deck and place unpublished in tableau",
+    "",
+    "When Drafted: May take top dinosaur card on deck and place unpublished in tableau",
+    "Discard: Take a card from the discard pile and add to your hand",
+    "When Drafted: May take top dinosaur card on deck and place unpublished in tableau",
+    "",
+    ""
+]
+
+DINOSAUR_BONUS_POINTS = [
+    "",
+    "",
+    "+2 bonus points for each other herbivore",
+    "",
+    "",
+    "",
+    "",
+    "+3 bonus points if last dinosaur published",
+    "+2 bonus points for each dinosaur that shares a trait with this card",
+    "",
+    "",
+    "",
+    "+4 bonus points if both other dinosaurs are carnivores",
+    "+3 bonus points if other dinosaurs are both worth 12 or less points",
+    "",
+    "",
+    "",
+    "+1 bonus point for each unique trait among other dinosaurs"
+]
+
 
 manualCardValues = [12,14,10,18,14,12,16,10,11,17,14,12,10,12,13,23,19,11]
 for cardIndex in range(len(CARDS)):
@@ -368,7 +410,13 @@ for cardIndex in range(len(CARDS)):
     print(",", end = "")
 
     # dinosaur point value
-    print(manualCardValues[cardIndex])
+    print(manualCardValues[cardIndex], end = ",")
+
+    print(HABITAT_POWERS[cardIndex], end = ",")
+    
+    print(DINOSAUR_BONUS_POINTS[cardIndex])
+    
+    
 
 print("-------------------")
 
@@ -392,3 +440,16 @@ for cardIndex in range(len(CARDS)):
         # dinosaur point value
         print(manualCardValues[cardIndex]) #, end =",")
         #print(cardValues[cardIndex] - 10)
+
+habitatCardsWithTraitCounts = [0,0,0,0,0,0,0,0]
+dinosaurCardsWithTraitCounts = [0,0,0,0,0,0,0,0]
+
+for card in CARDS:
+    for habitatTraitIndex in range(len(card["habitat"])):
+        if card["habitat"][habitatTraitIndex]:
+            habitatCardsWithTraitCounts[habitatTraitIndex] += 1
+    for dinoTraitIndex in range(len(card["dino"])):
+        if card["dino"][dinoTraitIndex]:
+            dinosaurCardsWithTraitCounts[dinoTraitIndex] += 1
+print(habitatCardsWithTraitCounts)
+print(dinosaurCardsWithTraitCounts)

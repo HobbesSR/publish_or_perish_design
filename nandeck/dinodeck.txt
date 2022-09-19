@@ -1,7 +1,7 @@
 LINK = dinodata.csv
 UNIT = INCH
 PAGE = 8.5, 11, PORTRAIT
-
+Baserange=,on
 cardsize = 2.5, 3.5
 rectangle=,0,0,100%,100%,#F8B88B
 
@@ -16,14 +16,20 @@ ICON = , S, JOIN([icon_image_folder],icon-lizard.png)
 ICON = , L, JOIN([icon_image_folder],icon-dinosaur.png)
 ICON = , F, JOIN([icon_image_folder],icon-fish.png)
 
+
+[dinobpcards] = "3,8,9,13,14,18"
 LAYER=50%
 roundrect=,5%,2%,90%,11%,#000000
+roundrect=[dinobpcards],5%,50%,90%,15%,#000000
 roundrect=,5%,65%,90%,30%,#000000
 roundrect=,91%,94%,8%,5%,#000000
 ENDLAYER
 
 FONT = "Arial", 12,T,#FFFFFF
 TEXT = , INFO(C), 91%, 94%, 8%, 5%
+
+FONT = "Arial", 8,T,#FFFFFF     ; Power font
+TEXT = [dinobpcards], [dinobonuspoints], 10%, 52%, 80%, 13%, left, wordwrap
 
 LAYER=25%
 roundrect=,13%,72%,18%,15%,#FEFEFE

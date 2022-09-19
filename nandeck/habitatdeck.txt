@@ -1,7 +1,7 @@
 LINK = dinodata.csv
 UNIT = INCH
 PAGE = 8.5, 11, PORTRAIT
-
+Baserange=,on
 cardsize = 2.5, 3.5
 rectangle=,0,0,100%,100%,#B4CFEC
 [habitat_image_folder] = "../images/habitats/"
@@ -17,15 +17,22 @@ ICON = , L, JOIN([icon_image_folder],icon-dinosaur.png)
 ICON = , F, JOIN([icon_image_folder],icon-fish.png)
 ;IMAGE=,JOIN([habitat_image_folder],[habit_image_path]),0,0,100%,100%
 ;IMAGE=,JOIN([icon_image_folder],icon-bush2.png),0,0,100%,100%,0,D
+
+
+[habitatpowercards] = "4,5,8,12,14,15,16"
+
 LAYER=60%
-roundrect=,5%,2%,90%,11%, #093325
+roundrect=,5%,2%,90%,11%,#093325
 roundrect=,5%,65%,90%,30%,#093325
+roundrect=[habitatpowercards],5%,50%,90%,15%,#093325
 ROUNDRECT=,91%,94%,8%,5%,#000000
 ENDLAYER
 
 FONT = "Arial", 12,T,#FFFFFF
 TEXT = , INFO(C), 91%, 94%, 8%, 5%
-;TEXT = , INFO(C), 91%, 94%, 8%, 5%
+
+FONT = "Arial", 8,T,#FFFFFF     ; Power font
+TEXT = [habitatpowercards], [habitpowers], 10%, 52%, 80%, 13%, left, wordwrap
 
 ;#553A33
 FONT = "Mesozoic", 20,TF,#FFFFFF
@@ -41,7 +48,6 @@ FONT = "Mesozoic", 26,T, #12884a
 ;TEXT = , [habitatprey], 0, 80%, 100%, 15%
 ICONS = , [habitatterrain], 0, 65%, 100%, 15%,13%,13%,0,NP
 ICONS = , [habitatprey], 0, 80%, 100%, 15%,13%,13%,0,NP
-
 
 
 PRINT=1-9,10-18
