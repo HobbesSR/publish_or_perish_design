@@ -182,6 +182,48 @@ HABITAT_IMAGE_FILENAMES = [
     "dinos(28)_1.png"
 ]
 
+NEW_HABITAT_DIRECTORIES = [
+    "paleoart",
+    "paleoart",
+    "paleoart",
+    "paleoart",
+    "paleoart",
+    "paleoart",
+    "paleoart",
+    "paleoart",
+    "paleoart",
+    "paleoart",
+    "paleoart",
+    "paleoart",
+    "paleoart",
+    "paleoart",
+    "paleoart",
+    "paleoart",
+    "paleoart",
+    "paleoart"
+]
+
+NEW_HABITAT_IMAGE_FILENAMES = [
+    "island.png",
+    "lagoon.png",
+    "swamp.png",
+    "flood_plain.png",
+    "prarie.png",
+    "river.png",
+    "riparian_forest.png",
+    "coniferous_forest.png",
+    "marsh.png",
+    "lake.png",
+    "delta.png",
+    "savanna.png",
+    "coast.png",
+    "mixed_forest.png",
+    "deciduous_forest.png",
+    "desert_plain.png",
+    "scrublands.png",
+    "wetlands.png"
+]
+
 def applyCardToRequirements(cardIndex, requirementsIn):
     card = CARDS[cardIndex]["habitat"]
     for i in range(8):
@@ -361,12 +403,12 @@ DINOSAUR_BONUS_POINTS = [
     "",
     "",
     "",
-    "+4 bonus points if both other dinosaurs are carnivores",
+    "+4 bonus points if both other dinosaurs are carnivores or omnivores",
     "+3 bonus points if other dinosaurs are both worth 12 or less points",
     "",
     "",
     "",
-    "+1 bonus point for each unique trait among other dinosaurs"
+    "+1 bonus point for each unique trait other dinosaurs don't share with this card"
 ]
 
 
@@ -378,7 +420,7 @@ for cardIndex in range(len(CARDS)):
     print(HABITAT_NAMES[cardIndex], end =",")
 
     # habitat image path
-    print(HABITAT_DIRECTORIES[cardIndex] + "/" + HABITAT_IMAGE_FILENAMES[cardIndex], end = ",")
+    print(NEW_HABITAT_DIRECTORIES[cardIndex] + "/" + NEW_HABITAT_IMAGE_FILENAMES[cardIndex], end = ",")
 
     # habitat environment traits
     for traitIndex in range(5):

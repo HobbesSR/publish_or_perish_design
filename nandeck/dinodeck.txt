@@ -1,6 +1,7 @@
 LINK = dinodata.csv
 UNIT = INCH
-PAGE = 8.5, 11, PORTRAIT
+PAGE = 8.5, 11, PORTRAIT, HV
+;BORDER=mark,"#000000",0.02
 Baserange=,on
 cardsize = 2.5, 3.5
 rectangle=,0,0,100%,100%,#F8B88B
@@ -20,7 +21,7 @@ ICON = , F, JOIN([icon_image_folder],icon-fish.png)
 [dinobpcards] = "3,8,9,13,14,18"
 LAYER=50%
 roundrect=,5%,2%,90%,11%,#000000
-roundrect=[dinobpcards],5%,50%,90%,15%,#000000
+roundrect=[dinobpcards],5%,50%,90%,14%,#000000
 roundrect=,5%,65%,90%,30%,#000000
 roundrect=,91%,94%,8%,5%,#000000
 ENDLAYER
@@ -29,14 +30,14 @@ FONT = "Arial", 12,T,#FFFFFF
 TEXT = , INFO(C), 91%, 94%, 8%, 5%
 
 FONT = "Arial", 8,T,#FFFFFF     ; Power font
-TEXT = [dinobpcards], [dinobonuspoints], 10%, 52%, 80%, 13%, left, wordwrap
+TEXT = [dinobpcards], [dinobonuspoints], 10%, 52%, 80%, 12%, left, wordwrap
 
 LAYER=25%
 roundrect=,13%,72%,18%,15%,#FEFEFE
 ENDLAYER
 
 FONT = "Mesozoic", 20,TF,#FFFFFF
-TEXT = , [dinoname], 10%, 0, 80%, 15%, center, center, 0, 100, 0.02
+TEXT = , [dinoname], 10%, 0, 80%, 15%, center, center, 0, 100,  0.02
 FONT = "Mesozoic", 26,T,#FFFFFF
 ;TEXT = , [dinoterrain], 30%, 65%, 65%, 15%, center, center, 0, 100, 0.02
 ;TEXT = , [dinoprey], 30%, 80%, 65%, 15%, center, center, 0, 100, 0.02
@@ -51,7 +52,8 @@ TEXT = , [value], 13%, 72%, 18%, 15%
 ICONS = , [dinoterrain], 30%, 65%, 65%, 15%,13%,13%,0,NP
 ICONS = , [dinoprey], 30%, 80%, 65%, 15%,13%,13%,0,NP
 
-DISPLAY = "tts_dinocards.png"
-DISPLAY = "tts_dinocards1.png",1,9,1-9
-DISPLAY = "tts_dinocards2.png",10,18,10-18
+DISPLAY = "tts_dinocards.png",1,18,6
+;DISPLAY = "tts_dinocards1.png",1,9,3
+;DISPLAY = "tts_dinocards2.png",10,18,3
 
+;DUPLEX=1-9,10-18

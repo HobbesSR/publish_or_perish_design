@@ -1,19 +1,19 @@
 habitatname,habit_image_path,habitatterrain,habitatprey,dinoname,dinoterrain,dinoprey,value,habitpowers,dinobonuspoints
-Island,island/dinos(4)_1.png,BC,SF,Tyrannosaurus,AT,LL,12,,
-Lagoon,lagoon/dinos(6)_7.png,C,SF,Corythosaurus,AABT,,14,,
-Swamp,swamp/dinos(7)_7.png,AT,SL,Stegosaurus,BBP,,10,,+2 bonus points for each other herbivore
-Floodplain,floodplain/dinos(8)_6.png,BP,L,Gallimimus,PP,SS,18,Discard: Refersh Draft Row. Then Take Draft Action.,
-Prarie,prarie/dinos(9)_1.png,BP,L,Apatosaurus,ABBT,,14,Discard: Refersh Draft Row. Then Take Draft Action.,
-River,river/dinos(10)_4.png,AB,SFL,Brachiosaurus,TP,,12,,
-Riparian Forest,riparian_forest/dinos(2)_4.png,ABT,SL,Archaeopteryx,BCC,SF,16,,
-Coniferous Forest,coniferous_forest/dinos(11)_6.png,T,SL,Compsognathus,BC,SS,10,Discard: Take a card from the discard pile and add to your hand,+3 bonus points if last dinosaur published
-Marsh,marshland/dinos(12)_3.png,AB,S,Allosaurus,AP,LL,11,,+2 bonus points for each dinosaur that shares a trait with this card
-Lake,lake/dinos(14)_9.png,A,FL,Thecodontosaurus,BBCC,SS,17,,
-Delta,delta/dinos(16)_6.png,AC,SF,Plateosaurus,BBT,,14,,
-Savanna,savanna/dinos(17)_7.png,BP,L,Herrerasaurus,T,SSL,12,When Drafted: May take top dinosaur card on deck and place unpublished in tableau,
-Coast,coast/dinos(18)_1.png,BC,SF,Velociraptor,P,SL,10,,+4 bonus points if both other dinosaurs are carnivores
-Mixed Forest,mixed_forest/dinos(24)_6.png,T,SL,Baryonyx,AC,FFL,12,When Drafted: May take top dinosaur card on deck and place unpublished in tableau,+3 bonus points if other dinosaurs are both worth 12 or less points
-Deciduous Forest,deciduous_forest/dinos(25)_15.png,T,SL,Triceratops,BTP,,13,Discard: Take a card from the discard pile and add to your hand,
-Desert Plain,desert_plain/dinos(26)_2.png,BP,L,Iguanodon,TTTC,,23,When Drafted: May take top dinosaur card on deck and place unpublished in tableau,
-Scrubland,scrubland/dinos(27)_3.png,BP,S,Ceratosaurus,AAAT,SFL,19,,
-Wetland,wetlands/dinos(28)_1.png,AT,SL,Oviraptor,BP,SF,11,,+1 bonus point for each unique trait among other dinosaurs
+Island,paleoart/island.png,BC,SF,Tyrannosaurus,AT,LL,12,,
+Lagoon,paleoart/lagoon.png,C,SF,Corythosaurus,AABT,,14,,
+Swamp,paleoart/swamp.png,AT,SL,Stegosaurus,BBP,,10,,+2 bonus points for each other herbivore
+Floodplain,paleoart/flood_plain.png,BP,L,Gallimimus,PP,SS,18,Discard: Refersh Draft Row. Then Take Draft Action.,
+Prarie,paleoart/prarie.png,BP,L,Apatosaurus,ABBT,,14,Discard: Refersh Draft Row. Then Take Draft Action.,
+River,paleoart/river.png,AB,SFL,Brachiosaurus,TP,,12,,
+Riparian Forest,paleoart/riparian_forest.png,ABT,SL,Archaeopteryx,BCC,SF,16,,
+Coniferous Forest,paleoart/coniferous_forest.png,T,SL,Compsognathus,BC,SS,10,Discard: Take a card from the discard pile and add to your hand,+3 bonus points if last dinosaur published
+Marsh,paleoart/marsh.png,AB,S,Allosaurus,AP,LL,11,,+2 bonus points for each dinosaur that shares a trait with this card
+Lake,paleoart/lake.png,A,FL,Thecodontosaurus,BBCC,SS,17,,
+Delta,paleoart/delta.png,AC,SF,Plateosaurus,BBT,,14,,
+Savanna,paleoart/savanna.png,BP,L,Herrerasaurus,T,SSL,12,When Drafted: May take top dinosaur card on deck and place unpublished in tableau,
+Coast,paleoart/coast.png,BC,SF,Velociraptor,P,SL,10,,+4 bonus points if both other dinosaurs are carnivores or omnivores
+Mixed Forest,paleoart/mixed_forest.png,T,SL,Baryonyx,AC,FFL,12,When Drafted: May take top dinosaur card on deck and place unpublished in tableau,+3 bonus points if other dinosaurs are both worth 12 or less points
+Deciduous Forest,paleoart/deciduous_forest.png,T,SL,Triceratops,BTP,,13,Discard: Take a card from the discard pile and add to your hand,
+Desert Plain,paleoart/desert_plain.png,BP,L,Iguanodon,TTTC,,23,When Drafted: May take top dinosaur card on deck and place unpublished in tableau,
+Scrubland,paleoart/scrublands.png,BP,S,Ceratosaurus,AAAT,SFL,19,,
+Wetland,paleoart/wetlands.png,AT,SL,Oviraptor,BP,SF,11,,+1 bonus point for each unique trait other dinosaurs don't share with this card
