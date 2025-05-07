@@ -5,35 +5,42 @@ PAGE = 8.5, 11, PORTRAIT, HV
 Baserange=,on
 cardsize = 2.5, 3.5
 rectangle=,0,0,100%,100%,#F8B88B
-
+[dino_image_folder] = "../images/dinosaurs/"
 [icon_image_folder] = "../images/icons/"
-ICON = , A, JOIN([icon_image_folder],icon-aquatic-plant.png)
-ICON = , B, JOIN([icon_image_folder],icon-bush2.png)
-ICON = , T, JOIN([icon_image_folder],icon-forest.png)
-ICON = , P, JOIN([icon_image_folder],icon-hill.png)
-ICON = , C, JOIN([icon_image_folder],icon-coast.png)
+ICON = , A, JOIN([icon_image_folder],icon_gpt_aquatic.png)
+ICON = , B, JOIN([icon_image_folder],icon_gpt_brush.png)
+ICON = , T, JOIN([icon_image_folder],icon_gpt_forest.png)
+ICON = , P, JOIN([icon_image_folder],icon_gpt_plains.png)
+ICON = , C, JOIN([icon_image_folder],icon_gpt_coast.png)
 
-ICON = , S, JOIN([icon_image_folder],icon-lizard.png)
-ICON = , L, JOIN([icon_image_folder],icon-dinosaur.png)
-ICON = , F, JOIN([icon_image_folder],icon-fish.png)
+ICON = , S, JOIN([icon_image_folder],icon_gpt_small_prey.png)
+ICON = , L, JOIN([icon_image_folder],icon_gpt_large_prey.png)
+ICON = , F, JOIN([icon_image_folder],icon_gpt_fish.png)
 
+IMAGE=,JOIN([dino_image_folder],[dino_image_path]),0,0,100%,100%
 
 [dinobpcards] = "3,8,9,13,14,18"
+
+[dinobp_frame_margin] = 8%
+[dinobp_frame_margin_right]=100% - (2 * [dinobp_frame_margin])
+[dinobp_y_pos]=61%
 LAYER=50%
-roundrect=,5%,2%,90%,11%,#000000
-roundrect=[dinobpcards],5%,50%,90%,14%,#000000
-roundrect=,5%,65%,90%,30%,#000000
-roundrect=,91%,94%,8%,5%,#000000
+roundrect=,5%,2%,90%,11%,#808080 ; Card Name
+roundrect=[dinobpcards],[dinobp_frame_margin],[dinobp_y_pos],[dinobp_frame_margin_right],11%,#808080 ; Bonus Points Tray
+;roundrect=,5%,73%,90%,22%,#808080 ; Card Tray
+roundrect=,91%,94%,8%,5%,#000000 ; Card Number
 ENDLAYER
 
 FONT = "Arial", 12,T,#FFFFFF
 TEXT = , INFO(C), 91%, 94%, 8%, 5%
 
+[dinobp_text_margin]=[dinobp_frame_margin] + 3%
+[dinobp_text_margin_right]=100% - (2 * [dinobp_text_margin])
 FONT = "Arial", 8,T,#FFFFFF     ; Power font
-TEXT = [dinobpcards], [dinobonuspoints], 10%, 52%, 80%, 12%, left, wordwrap
+TEXT = [dinobpcards], [dinobonuspoints], [dinobp_text_margin], [dinobp_y_pos] + 2%, [dinobp_text_margin_right], 20%, left, wordwrap
 
 LAYER=25%
-roundrect=,13%,72%,18%,15%,#FEFEFE
+;roundrect=,13%,76%,18%,15%,#FEFEFE ; Points
 ENDLAYER
 
 FONT = "Mesozoic", 20,TF,#FFFFFF
@@ -41,16 +48,18 @@ TEXT = , [dinoname], 10%, 0, 80%, 15%, center, center, 0, 100,  0.02
 FONT = "Mesozoic", 26,T,#FFFFFF
 ;TEXT = , [dinoterrain], 30%, 65%, 65%, 15%, center, center, 0, 100, 0.02
 ;TEXT = , [dinoprey], 30%, 80%, 65%, 15%, center, center, 0, 100, 0.02
-TEXT = , [value], 13%, 72%, 18%, 15%, center, center, 0, 100, 0.02
+;TEXT = , [value], 13%, 76%, 18%, 15%, center, center, 0, 100, 0.02
+IMAGE = , JOIN([icon_image_folder],"icon_", [value], ".png"), 13%, 76%, 18%, 15%,,NP
 
 FONT = "Mesozoic", 20,TF,#000000
 TEXT = , [dinoname], 10%, 0, 80%, 15%
 FONT = "Mesozoic", 26,T,#000000
 ;TEXT = , [dinoterrain], 30%, 65%, 65%, 15%, center, center, 0, 100, 0.02
 ;TEXT = , [dinoprey], 30%, 80%, 65%, 15%, center, center, 0, 100, 0.02
-TEXT = , [value], 13%, 72%, 18%, 15%
-ICONS = , [dinoterrain], 30%, 65%, 65%, 15%,13%,13%,0,NP
-ICONS = , [dinoprey], 30%, 80%, 65%, 15%,13%,13%,0,NP
+;TEXT = , [value], 13%, 76%, 18%, 15%, center, center, 0, 100, 0.02
+ICONS = , [dinoterrain], 30%, 72%, 65%, 15%,13%,13%,0,NP
+ICONS = , [dinoprey], 30%, 82%, 65%, 15%,13%,13%,0,NP
+
 
 DISPLAY = "tts_dinocards.png",1,18,6
 ;DISPLAY = "tts_dinocards1.png",1,9,3

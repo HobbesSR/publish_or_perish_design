@@ -93,6 +93,69 @@ DINO_NAMES = [
     "Thecodontosaurus"
 ]
 
+DINO_DIRECTORIES = [
+    "herrerasaurus",
+    "plateosaurus",
+    "stegosaurus",
+    "corythosaurus",
+    "gallimimus",
+    "allosaurus",
+    "tyrannosaurus",
+    "oviraptor",
+    "velociraptor",
+    "archaeopteryx",
+    "compsognathus",
+    "baryonyx",
+    "triceratops",
+    "brachiosaurus",
+    "ceratosaurus",
+    "apatosaurus",
+    "iguanodon",
+    "thecodontosaurus"
+]
+
+DINO_IMAGE_FILENAMES = [
+    "dinos(4)_1.png",
+    "dinos(6)_7.png",
+    "dinos(7)_7.png",
+    "dinos(8)_6.png",
+    "dinos(9)_1.png",
+    "dinos(10)_4.png",
+    "dinos(2)_4.png",
+    "dinos(11)_6.png",
+    "dinos(12)_3.png",
+    "dinos(14)_9.png",
+    "dinos(16)_6.png",
+    "dinos(17)_7.png",
+    "dinos(18)_1.png",
+    "dinos(24)_6.png",
+    "dinos(25)_15.png",
+    "dinos(26)_2.png",
+    "dinos(27)_3.png",
+    "dinos(28)_1.png"
+]
+
+NEW_DINO_IMAGE_FILENAMES = [
+    "herrerasaurus.png",
+    "plateosaurus.png",
+    "stegosaurus.png",
+    "corythosaurus.png",
+    "gallimimus.png",
+    "allosaurus.png",
+    "tyrannosaurus.png",
+    "oviraptor.png",
+    "velociraptor.png",
+    "archaeopteryx.png",
+    "compsognathus.png",
+    "baryonyx.png",
+    "triceratops.png",
+    "brachiosaurus.png",
+    "ceratosaurus.png",
+    "apatosaurus.png",
+    "iguanodon.png",
+    "thecodontosaurus.png"
+]
+
 # for each card, find the list of available cards that have no conflicts
 # find the cards with the fewest set of conflict free cards
 # from the cards among those, find the card with the most conflicts
@@ -124,7 +187,7 @@ HABITAT_NAMES = [
     "Lagoon",
     "Swamp",
     "Floodplain",
-    "Prarie",
+    "Prairie",
     "River",
     "Riparian Forest",
     "Coniferous Forest",
@@ -145,7 +208,7 @@ HABITAT_DIRECTORIES = [
     "lagoon",
     "swamp",
     "floodplain",
-    "prarie",
+    "prairie",
     "river",
     "riparian_forest",
     "coniferous_forest",
@@ -182,33 +245,12 @@ HABITAT_IMAGE_FILENAMES = [
     "dinos(28)_1.png"
 ]
 
-NEW_HABITAT_DIRECTORIES = [
-    "paleoart",
-    "paleoart",
-    "paleoart",
-    "paleoart",
-    "paleoart",
-    "paleoart",
-    "paleoart",
-    "paleoart",
-    "paleoart",
-    "paleoart",
-    "paleoart",
-    "paleoart",
-    "paleoart",
-    "paleoart",
-    "paleoart",
-    "paleoart",
-    "paleoart",
-    "paleoart"
-]
-
 NEW_HABITAT_IMAGE_FILENAMES = [
     "island.png",
     "lagoon.png",
     "swamp.png",
     "flood_plain.png",
-    "prarie.png",
+    "prairie.png",
     "river.png",
     "riparian_forest.png",
     "coniferous_forest.png",
@@ -420,35 +462,38 @@ for cardIndex in range(len(CARDS)):
     print(HABITAT_NAMES[cardIndex], end =",")
 
     # habitat image path
-    print(NEW_HABITAT_DIRECTORIES[cardIndex] + "/" + NEW_HABITAT_IMAGE_FILENAMES[cardIndex], end = ",")
+    print("paleoart/" + NEW_HABITAT_IMAGE_FILENAMES[cardIndex], end = ",")
 
     # habitat environment traits
     for traitIndex in range(5):
-    	for i in range(habitat[traitIndex]):
-    	   print(resourceLetters[traitIndex], end = "")
+        for i in range(habitat[traitIndex]):
+           print(resourceLetters[traitIndex], end = "")
     print(",", end = "")
 
     # habitat prey traits
     for traitIndex in range(5,8):
-    	for i in range(habitat[traitIndex]):
-    	   print(resourceLetters[traitIndex], end = "")
+        for i in range(habitat[traitIndex]):
+           print(resourceLetters[traitIndex], end = "")
     print(",", end = "")
 
     # dinosaur name
     #print("Dino" + str(cardIndex+1), end =",")
     print(DINO_NAMES[HABITAT_DINO_INDEXES[cardIndex]], end = ",")
 
+    # dinosaur image path
+    print("paleoart/" + NEW_DINO_IMAGE_FILENAMES[HABITAT_DINO_INDEXES[cardIndex]], end = ",")
+
     # dinosaur environment trait requirements
     dino = card["dino"]
     for traitIndex in range(5):
-    	for i in range(dino[traitIndex]):
-    	   print(resourceLetters[traitIndex], end = "")
+        for i in range(dino[traitIndex]):
+           print(resourceLetters[traitIndex], end = "")
     print(",", end = "")
 
     # dinosaur prey trait requirements
     for traitIndex in range(5,8):
-    	for i in range(dino[traitIndex]):
-    	   print(resourceLetters[traitIndex], end = "")
+        for i in range(dino[traitIndex]):
+           print(resourceLetters[traitIndex], end = "")
     print(",", end = "")
 
     # dinosaur point value
@@ -495,3 +540,4 @@ for card in CARDS:
             dinosaurCardsWithTraitCounts[dinoTraitIndex] += 1
 print(habitatCardsWithTraitCounts)
 print(dinosaurCardsWithTraitCounts)
+

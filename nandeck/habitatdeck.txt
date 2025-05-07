@@ -7,22 +7,24 @@ cardsize = 2.5, 3.5
 rectangle=,0,0,100%,100%,#B4CFEC
 [habitat_image_folder] = "../images/habitats/"
 [icon_image_folder] = "../images/icons/"
-ICON = , A, JOIN([icon_image_folder],icon-aquatic-plant.png)
-ICON = , B, JOIN([icon_image_folder],icon-bush2.png)
-ICON = , T, JOIN([icon_image_folder],icon-forest.png)
-ICON = , P, JOIN([icon_image_folder],icon-hill.png)
-ICON = , C, JOIN([icon_image_folder],icon-coast.png)
+ICON = , A, JOIN([icon_image_folder],icon_gpt_aquatic.png)
+ICON = , B, JOIN([icon_image_folder],icon_gpt_brush.png)
+ICON = , T, JOIN([icon_image_folder],icon_gpt_forest.png)
+ICON = , P, JOIN([icon_image_folder],icon_gpt_plains.png)
+ICON = , C, JOIN([icon_image_folder],icon_gpt_coast.png)
 
-ICON = , S, JOIN([icon_image_folder],icon-lizard.png)
-ICON = , L, JOIN([icon_image_folder],icon-dinosaur.png)
-ICON = , F, JOIN([icon_image_folder],icon-fish.png)
-;IMAGE=,JOIN([habitat_image_folder],[habit_image_path]),0,0,100%,100%
+ICON = , S, JOIN([icon_image_folder],icon_gpt_small_prey.png)
+ICON = , L, JOIN([icon_image_folder],icon_gpt_large_prey.png)
+ICON = , F, JOIN([icon_image_folder],icon_gpt_fish.png)
+
+
+IMAGE=,JOIN([habitat_image_folder],[habit_image_path]),0,0,100%,100%
 
 [habitatpowercards] = "4,5,8,12,14,15,16"
 
 LAYER=60%
 roundrect=,5%,2%,90%,11%,#093325
-roundrect=,5%,65%,90%,30%,#093325
+;roundrect=,5%,65%,90%,30%,#093325
 roundrect=[habitatpowercards],5%,50%,90%,14%,#093325
 ROUNDRECT=,91%,94%,8%,5%,#000000
 ENDLAYER
